@@ -146,8 +146,7 @@ class AddScreen extends StatelessWidget {
                   builder: (context, imageProvider, _) {
                     return ElevatedButton(
                       style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(iconsColor)),
+                          backgroundColor: WidgetStateProperty.all(iconsColor)),
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           addStudentDetails(context);
@@ -195,6 +194,16 @@ class AddScreen extends StatelessWidget {
       );
       Provider.of<Studentprovider>(context, listen: false).addStudent(student);
       Provider.of<ImageProviderImg>(context, listen: false).setImage(null);
+      //Snackbar
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Student added successfully!'),
+          backgroundColor: Colors.green,
+          duration: Duration(seconds: 2),
+        ),
+      );
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const HomeScreen()),

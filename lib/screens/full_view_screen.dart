@@ -9,7 +9,7 @@ import 'package:studentapp_provider_hive/styles/styles.dart';
 class FullViewScreen extends StatelessWidget {
   final StudentModel student;
 
-  FullViewScreen({super.key, required this.student});
+  const FullViewScreen({super.key, required this.student});
 
   @override
   Widget build(BuildContext context) {
@@ -100,8 +100,8 @@ class FullViewScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             SizedBox(
-                              width: 100, // Set your desired width
-                              height: 40, // Set your desired height
+                              width: 100,
+                              height: 40,
                               child: ElevatedButton(
                                 onPressed: () {
                                   Navigator.push(
@@ -125,8 +125,8 @@ class FullViewScreen extends StatelessWidget {
                               width: 40,
                             ),
                             SizedBox(
-                              width: 100, // Set your desired width
-                              height: 40, // Set your desired height
+                              width: 100,
+                              height: 40,
                               child: ElevatedButton(
                                 onPressed: () {
                                   showDeleteDialog(
@@ -143,35 +143,6 @@ class FullViewScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-
-                        // ElevatedButton(
-                        //   onPressed: () {
-                        //     Navigator.push(
-                        //       context,
-                        //       MaterialPageRoute(
-                        //         builder: (context) =>
-                        //             EditScreen(studentt: student),
-                        //       ),
-                        //     );
-                        //   },
-                        //   style: ElevatedButton.styleFrom(
-                        //       backgroundColor: iconsColor),
-                        //   child: const Text(
-                        //     "EDIT",
-                        //     style: TextStyle(color: themecode),
-                        //   ),
-                        // ),
-                        // ElevatedButton(
-                        //   onPressed: () {
-                        //     showDeleteDialog(context, studentProvider, student);
-                        //   },
-                        //   style: ElevatedButton.styleFrom(
-                        //       backgroundColor: iconsColor),
-                        //   child: const Text(
-                        //     "DELETE",
-                        //     style: TextStyle(color: themecode),
-                        //   ),
-                        // ),
                       ],
                     ),
                   ],
@@ -203,6 +174,14 @@ class FullViewScreen extends StatelessWidget {
                   studentProvider.deleteDetails(student);
                   Navigator.of(context).pop();
                   Navigator.of(context).pop();
+                  // Show snackbar
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Student deleted successfully!'),
+                      backgroundColor: Colors.red,
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
                 },
                 child: const Text('Delete')),
           ],

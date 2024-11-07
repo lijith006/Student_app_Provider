@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(create: (context) => ImageProviderImg()),
         ChangeNotifierProvider(create: (context) => EditingImageprovider()),
-        // ChangeNotifierProvider(create: (context) => TabIndexProvider())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

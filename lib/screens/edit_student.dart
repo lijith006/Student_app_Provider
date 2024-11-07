@@ -189,6 +189,14 @@ class EditScreen extends StatelessWidget {
 
       Provider.of<Studentprovider>(context, listen: false)
           .updateDetails(studentt);
+      // Show snackbar
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Student updated successfully!'),
+          backgroundColor: Colors.green,
+          duration: Duration(seconds: 2),
+        ),
+      );
 
       Navigator.of(context).pop();
     }

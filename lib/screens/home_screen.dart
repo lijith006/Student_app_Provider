@@ -123,7 +123,6 @@ class HomeScreen extends StatelessWidget {
                           student.studentName!,
                           style: const TextStyle(
                             color: textcolor,
-                            //color: Color.fromARGB(255, 248, 193, 193),
                             fontWeight: studentfont,
                           ),
                         ),
