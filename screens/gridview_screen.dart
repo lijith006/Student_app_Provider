@@ -19,7 +19,7 @@ class GridViewScreen extends StatelessWidget {
         foregroundColor: iconsColor,
         backgroundColor: themecode,
         title: const Text(
-          'Student Details',
+          'Student Database',
           style: TextStyle(fontWeight: studentfont),
         ),
         actions: [
